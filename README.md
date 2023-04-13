@@ -1,7 +1,7 @@
 # Wordle Sınırsız
  Günlük sınır olmadan istediğiniz kadar oynayabileceğiniz Türkçe bir wordle oyunu.
  
-## Hemen [**Oynamak**][1] İçin
+## Hemen [**Oynamak**][1] İçin Tıkla!
 
 Ported from: https://github.com/enesklcarslan/wordle-turkce-sinirsiz
 
