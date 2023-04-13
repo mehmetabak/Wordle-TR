@@ -1,0 +1,185 @@
+body {
+    background-color: #121213 !important;
+}
+
+.fa-question-circle,
+.fa-cog {
+    color: #fff;
+    width: 24px;
+}
+
+
+/*align .menu-left to left, .menu-right to right and .title to center*/
+
+.menu-left {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.menu-right {
+    /*vertically align items inside this div center and horizontally right*/
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    /*choose a font with minimal letter spacing*/
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    font-size: 1.5em;
+    letter-spacing: -0.05em;
+}
+
+#help-text,
+#settings-text {
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    font-size: 0.9em;
+    letter-spacing: -0.05em;
+    display: none;
+    opacity: 0.5;
+    padding: 5px;
+}
+
+
+/*align #board-container in center vertically and horizontally using translate*/
+
+#board-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#game-keyboard {
+    gap: 3px;
+}
+
+.keyboard-key {
+    font-family: inherit;
+    font-weight: bold;
+    border: 0;
+    padding: 0;
+    margin: 2px 4px 2px 2px;
+    height: 58px;
+    border-radius: 4px;
+    cursor: pointer;
+    user-select: none;
+    background-color: #818384;
+    color: #ffffff;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0.3);
+    text-transform: uppercase;
+}
+
+.keyboard-row {
+    margin-bottom: 3px;
+}
+
+#board {
+    padding: 0px 13px;
+}
+
+.game-tile {
+    border: 2px solid #3a3a3c;
+    /*center letters inside game tiles vertically and horizontally*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /*choose a bold font*/
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+}
+
+.game-row {
+    padding: 3px;
+    gap: 3px;
+}
+
+.keyboard-key {
+    font-family: 'Clear Sans', 'Helvetica Neue', Arial, sans-serif;
+}
+
+@media screen and (max-width: 500px) {
+    .keyboard-key {
+        font-size: 0.8em;
+    }
+    h1 {
+        font-size: calc(1.2rem + 1.5vw) !important;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .keyboard-key {
+        font-size: 0.6em;
+    }
+    h1 {
+        font-size: calc(1rem + 1.5vw) !important;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    .keyboard-key {
+        margin: 0 1px 0 0;
+    }
+}
+
+@media screen and (max-width: 385px) {
+    .keyboard-key {
+        margin: 0 0.1px 0 0;
+    }
+}
+
+@media screen and (max-width: 347px) {
+    h1 {
+        font-size: calc(0.8rem + 1.5vw) !important;
+    }
+}
+
+.game-tile {
+    color: #fff;
+    border-radius: 4px;
+}
+
+.shake {
+    animation: shake 0.5s;
+
+    /* When the animation is finished, start again */
+    animation-iteration-count: infinite;
+  }
+  
+  @keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
+  }
+
+  .flip-animation {
+    animation: flip 0.5s ease-in-out;
+  }
+  
+  @keyframes flip {
+    0% {
+      transform: rotateY(0);
+    }
+    100% {
+      transform: rotateY(180deg);
+    }
+  }

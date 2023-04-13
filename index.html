@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="html">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Turkish Wordle Unlimited is a wordle game clone that can be played unlimited times.">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <script src="https://jsuites.net/v4/jsuites.js"></script>
+    <link rel="stylesheet" href="https://jsuites.net/v4/jsuites.css" type="text/css" />
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <title>Sınırsız Wordle</title>
+    
+</head>
+
+<body>
+    <header>
+        <div class="container-fluid">
+            <div class="row border-bottom">
+                <div class="menu-left col-2 align-content-center">
+                    <button id="help-button" class="btn">
+                        <!--fontawesome i icon-->
+                        <i class="fas fa-question-circle"></i>
+                    </button>
+                    <div id="help-text" class="text-info">
+                        Wordle oyununun Türkçe ve sınırsız oynanabilen halidir.
+                    </div>
+                </div>
+                <div class="title col-8 align-content-center">
+                    <h1>Sınırsız Wordle</h1>
+                </div>
+                <div class="menu-right col-2 align-content-center">
+                    <div id="settings-text" class="text-info">
+                        Bu butonun bir esprisi yok, güzel gözüksün diye koydum.
+                    </div>
+                    <button id="settings-button" class="btn">
+                        <!--fontawesome i icon-->
+                        <i class="fa-solid fa-repeat" style="color: #ffffff;"></i>
+                    </button>
+                </div>
+            </div>
+    </header>
+
+    <div id="game">
+        <div id="board-container" class="container">
+            <div id="board" style="width:350px; height:420px;">
+                <div class="game-row row">
+                    <div class="game-tile col"></div>
+                    <div class="game-tile col"></div>
+                    <div class="game-tile col"></div>
+                    <div class="game-tile col"></div>
+                    <div class="game-tile col"></div>
+                </div>
+                <div class="game-row row">
+                    <div class="game-tile col"></div>
+                    <div class="game-tile col"></div>
+                    <div class="game-tile col"></div>
+                    <div class="game-tile col"></div>
+                    <div class="game-tile col"></div>
+                </div>
+                <div class="game-row row">
+                    <div class="game-tile col"></div>
+                    <div class="game-tile col"></div>
+                    <div class="game-tile col"></div>
+                    <div class="game-tile col"></div>
+                    <div class="game-tile col"></div>
+                </div>
+                <div class="game-row row">
+                    <div class="game-tile col"></div>
+                    <div class="game-tile col"></div>
+                    <div class="game-tile col"></div>
+                    <div class="game-tile col"></div>
+                    <div class="game-tile col"></div>
+                </div>
+                <div class="game-row row">
+                    <div class="game-tile col"></div>
+                    <div class="game-tile col"></div>
+                    <div class="game-tile col"></div>
+                    <div class="game-tile col"></div>
+                    <div class="game-tile col"></div>
+                </div>
+                <div class="game-row row">
+                    <div class="game-tile col"></div>
+                    <div class="game-tile col"></div>
+                    <div class="game-tile col"></div>
+                    <div class="game-tile col"></div>
+                    <div class="game-tile col"></div>
+                </div>
+            </div>
+        </div>
+        <div id="game-keyboard" class="container">
+            <div class="row keyboard-row">
+                <div class="col keyboard-key" id="letter-e">e</div>
+                <div class="col keyboard-key" id="letter-r">r</div>
+                <div class="col keyboard-key" id="letter-t">t</div>
+                <div class="col keyboard-key" id="letter-y">y</div>
+                <div class="col keyboard-key" id="letter-u">u</div>
+                <div class="col keyboard-key" id="letter-noktasizi">ı</div>
+                <div class="col keyboard-key" id="letter-o">o</div>
+                <div class="col keyboard-key" id="letter-p">p</div>
+                <div class="col keyboard-key" id="letter-yumusakg">ğ</div>
+                <div class="col keyboard-key" id="letter-noktaliu">ü</div>
+            </div>
+            <div class="row keyboard-row">
+                <div class="col keyboard-key" id="letter-a">a</div>
+                <div class="col keyboard-key" id="letter-s">s</div>
+                <div class="col keyboard-key" id="letter-d">d</div>
+                <div class="col keyboard-key" id="letter-f">f</div>
+                <div class="col keyboard-key" id="letter-g">g</div>
+                <div class="col keyboard-key" id="letter-h">h</div>
+                <div class="col keyboard-key" id="letter-j">j</div>
+                <div class="col keyboard-key" id="letter-k">k</div>
+                <div class="col keyboard-key" id="letter-l">l</div>
+                <div class="col keyboard-key" id="letter-notaklis">ş</div>
+                <div class="col keyboard-key" id="letter-i">i</div>
+            </div>
+            <div class="row keyboard-row">
+                <div class="col keyboard-key" id="enter-button">enter</div>
+                <div class="col keyboard-key" id="letter-z">z</div>
+                <div class="col keyboard-key" id="letter-c">c</div>
+                <div class="col keyboard-key" id="letter-v">v</div>
+                <div class="col keyboard-key" id="letter-b">b</div>
+                <div class="col keyboard-key" id="letter-n">n</div>
+                <div class="col keyboard-key" id="letter-m">m</div>
+                <div class="col keyboard-key" id="letter-noktalio">ö</div>
+                <div class="col keyboard-key" id="letter-noktalic">ç</div>
+                <div class="col keyboard-key" id="backspace-button"><i class="fas fa-backspace"></i></div>
+            </div>
+
+            <script src="js/script.js"></script>
+</body>
+
+</html>
