@@ -148,7 +148,7 @@ function enter() {
                         $('.keyboard-key').filter(function() {
                             return ($(this).text() === window.typedWord[i].toLowerCase());
                         }).css('background-color', 'green');
-                        
+                        window.dictionary[window.typedWord[i].toUpperCase()]--;
                     }
                     //check if window.typedWord[i] is in wordOfTheSession
                     else if (window.wordOfTheSession.includes(window.typedWord[i].toUpperCase()) && window.dictionary[window.typedWord[i].toUpperCase()] > 0) {
@@ -160,7 +160,7 @@ function enter() {
                             $('.keyboard-key').filter(function() {
                                 return ($(this).text() === window.typedWord[i].toLowerCase());
                             }).css('background-color', '#b59f3b');
-                            
+                            window.dictionary[window.typedWord[i].toUpperCase()]--;
                         }
                     } else {
                         $('.game-tile').eq(i + (tries * 5)).css('background-color', '#3a3a3c');
@@ -173,7 +173,14 @@ function enter() {
                             $('.keyboard-key').filter(function() {
                                 return ($(this).text() === window.typedWord[i].toLowerCase());
                             }).css('background-color', '#3a3a3c');
+                            //Last Control
+                            if(window.wordOfTheSession.includes(window.typedWord[i].toUpperCase())){
+                                $('.keyboard-key').filter(function() {
+                                    return ($(this).text() === window.typedWord[i].toLowerCase());
+                                }).css('background-color', '#b59f3b');
+                            }
                         }
+                        
                     }
                 }
 
