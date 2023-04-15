@@ -167,9 +167,9 @@ function enter() {
                         //if the letter's keyboard key is not green or yellow, make it red
                         if ($('.keyboard-key').filter(function() {
                                 return ($(this).text() === window.typedWord[i].toLowerCase());
-                            }).css('background-color') == 'green' || $('.keyboard-key').filter(function() {
+                            }).css('background-color') === 'green' || $('.keyboard-key').filter(function() {
                                 return ($(this).text() === window.typedWord[i].toLowerCase());
-                            }).css('background-color') == '#b59f3b') {
+                            }).css('background-color') === '#b59f3b') {
                             console.log("yes");
                         }else{
                             $('.keyboard-key').filter(function() {
