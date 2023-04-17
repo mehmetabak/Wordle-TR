@@ -1,4 +1,4 @@
-# Wordle Sınırsız
+# Wordle TR
  Günlük sınır olmadan istediğiniz kadar oynayabileceğiniz Türkçe bir wordle oyunu.
  
 ## Hemen [**Oynamak**][1] İçin Tıkla!
