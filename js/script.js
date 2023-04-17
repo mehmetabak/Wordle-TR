@@ -125,6 +125,7 @@ $('#backspace-button').click(function() {
 });
 
 var dictionary = {};
+const bool = [null,null,null,null,null];
 
 
 
@@ -145,6 +146,7 @@ function enter() {
                 for (var i = 0; i < 5; i++) {
                     if (window.typedWord[i].toUpperCase() == window.wordOfTheSession[i]) {
                         $('.game-tile').eq(i + (tries * 5)).css('background-color', 'green');
+                        bool[i] = window.typedWord[i].toUpperCase();
                         $('.keyboard-key').filter(function() {
                             return ($(this).text() === window.typedWord[i].toLowerCase());
                         }).css('background-color', 'green');
@@ -161,22 +163,39 @@ function enter() {
                                 return ($(this).text() === window.typedWord[i].toLowerCase());
                             }).css('background-color', '#b59f3b');
                             window.dictionary[window.typedWord[i].toUpperCase()]--;
+                            //Last Control
+                            if(bool.includes(window.typedWord[i].toUpperCase())){
+                                $('.keyboard-key').filter(function() {
+                                    return ($(this).text() === window.typedWord[i].toLowerCase());
+                                }).css('background-color', 'green');
+                            }else if(window.wordOfTheSession.includes(window.typedWord[i].toUpperCase())){
+                                $('.keyboard-key').filter(function() {
+                                    return ($(this).text() === window.typedWord[i].toLowerCase());
+                                }).css('background-color', '#b59f3b');
+                            }
                         }
                     } else {
                         $('.game-tile').eq(i + (tries * 5)).css('background-color', '#3a3a3c');
                         //if the letter's keyboard key is not green or yellow, make it red
                         if ($('.keyboard-key').filter(function() {
-                                return ($(this).text() === window.typedWord[i].toLowerCase());
-                            }).css('background-color') === 'green' || $('.keyboard-key').filter(function() {
-                                return ($(this).text() === window.typedWord[i].toLowerCase());
-                            }).css('background-color') === '#b59f3b') {
-                            console.log("yes");
-                        }else{
+                            return ($(this).text() === window.typedWord[i].toLowerCase());
+                        }).css('background-color') !== 'green' && $('.keyboard-key').filter(function() {
+                            return ($(this).text() === window.typedWord[i].toLowerCase());
+                        }).css('background-color') !== '#b59f3b') {
                             $('.keyboard-key').filter(function() {
                                 return ($(this).text() === window.typedWord[i].toLowerCase());
                             }).css('background-color', '#3a3a3c');
+                            //Last Control
+                            if(bool.includes(window.typedWord[i].toUpperCase())){
+                                $('.keyboard-key').filter(function() {
+                                    return ($(this).text() === window.typedWord[i].toLowerCase());
+                                }).css('background-color', 'green');
+                            }else if(window.wordOfTheSession.includes(window.typedWord[i].toUpperCase())){
+                                $('.keyboard-key').filter(function() {
+                                    return ($(this).text() === window.typedWord[i].toLowerCase());
+                                }).css('background-color', '#b59f3b');
+                            }
                         }
-                        
                     }
                 }
 
