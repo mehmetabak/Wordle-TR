@@ -199,6 +199,7 @@ function enter() {
                     }
                 }
 
+                
                 if (window.typedWord.toUpperCase() === window.wordOfTheSession) {
                     jSuites.notification({
                         name: 'AsaF',
