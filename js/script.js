@@ -151,6 +151,18 @@ function enter() {
                             return ($(this).text() === window.typedWord[i].toLowerCase());
                         }).css('background-color', 'green');
                         window.dictionary[window.typedWord[i].toUpperCase()]--;
+
+                        if(window.dictionary[window.typedWord[i].toUpperCase()] <0){
+                            let ii = window.dictionary[window.typedWord[i].toUpperCase()]*-1
+                            for(var a = 0; a < i; a++){
+                                var text = $('.game-tile').eq(a + (tries * 5)).first();
+                                if($('.game-tile').eq(a + (tries * 5)).css('background-color') === 'rgb(181, 159, 59)' && text.text() === window.typedWord[i].toUpperCase() && ii > 0){
+                                    $('.game-tile').eq(a + (tries * 5)).css('background-color', '#3a3a3c');
+                                    ii--;
+                                    window.dictionary[window.typedWord[i].toUpperCase()]++;
+                                }
+                            }
+                        }
                     }
                     //check if window.typedWord[i] is in wordOfTheSession
                     else if (window.wordOfTheSession.includes(window.typedWord[i].toUpperCase()) && window.dictionary[window.typedWord[i].toUpperCase()] > 0) {
@@ -199,7 +211,7 @@ function enter() {
                     }
                 }
 
-                
+
                 if (window.typedWord.toUpperCase() === window.wordOfTheSession) {
                     jSuites.notification({
                         name: 'AsaF',
