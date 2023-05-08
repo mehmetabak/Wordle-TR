@@ -300,6 +300,7 @@ function enter() {
 
 
         } else {
+//Add shake animation
             jSuites.notification({
                 name: 'AsaF',
                 message: '5 harfli bir kelime giriniz!',
