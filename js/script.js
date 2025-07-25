@@ -214,7 +214,7 @@ function enter() {
 
                 if (window.typedWord.toUpperCase() === window.wordOfTheSession) {
                     jSuites.notification({
-                        name: 'AsaF',
+                        name: 'Tebrikler',
                         message: 'Doğru tahmin, kazandın!',
                     })
 
@@ -258,7 +258,7 @@ function enter() {
 
                     if(tries < 6){
                         jSuites.notification({
-                            name: 'AsaF',
+                            name: ':(',
                             message: 'Yanlış tahmin!',
                         })
                     }
@@ -267,8 +267,8 @@ function enter() {
                 if (tries > 5) {
                     let cevap = 'Kaybettin, ' +'cevap '+ window.wordOfTheSession + ' olacaktı!';
                     jSuites.notification({
-                        name: 'AsaF',
-                        message: cevap,
+                        name: 'Doğru Cevap: ',
+                        message: cevap + ' olacaktı',
                     })
                     
                     gameOver = true;
@@ -281,7 +281,7 @@ function enter() {
                 console.log(window.dictionary);
             } else {
                 jSuites.notification({
-                    name: 'AsaF',
+                    name: ':(',
                     message: 'Böyle bir kelime yok!',
                 })
                 $('.game-tile').eq(0 + (tries * 5)).addClass('shake');
@@ -302,7 +302,7 @@ function enter() {
         } else {
 //Add shake animation
             jSuites.notification({
-                name: 'AsaF',
+                name: '!',
                 message: '5 harfli bir kelime giriniz!',
             })
         }
